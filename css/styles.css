@@ -10907,7 +10907,41 @@ textarea.form-control-lg {
 /* Centrado y ajuste de navbar */
 .navbar-nav {
   gap: 1rem;
+} 
+
+
+
+#carouselHeader {
+  max-height: 300px;
+  overflow: hidden;
 }
+
+#carouselHeader .carousel-inner {
+  height: 300px;
+}
+
+#carouselHeader .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+} 
+
+.fade-in {
+  animation: fadeIn ease-in-out 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 

@@ -19,88 +19,129 @@
 
 <body>
     <!-- BARRA DE NAVEGACION-->
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#!">
-                <img src="assets/img/LogoServifacil.png" alt="Logo del negocio" style="height: 70px; width: 100px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <!-- Logo en lugar del texto -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/LogoServifacil.png" alt="Servifacil Logo" style="height: 70px; width: 100px;">
             </a>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span>
+
+            <!-- Botón de hamburguesa para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-    
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link fs-4 active text-black" aria-current="page"
-                            href="index.html">INICIO</a>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto d-flex align-items-center justify-content-center w-100 gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-custom-blue" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i> INICIO
+                        </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link fs-4 active text-black"
-                            href="pages/Nosotros.html">NOSOTROS</a>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-custom-blue" href="pages/Nosotros.html">
+                            <i class="bi bi-people-fill me-1"></i> NOSOTROS
+                        </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link fs-4 active text-black"
-                            href="pages/Servicios.html">SERVICIOS</a>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-custom-blue" href="pages/Servicios.html">
+                            <i class="bi bi-tools me-1"></i> SERVICIOS
+                        </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link fs-4 active text-black"
-                            href="pages/Contactos.html">CONTACTOS</a>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-custom-blue" href="pages/Contactos.html">
+                            <i class="bi bi-envelope-fill me-1"></i> CONTACTO
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!--FIN BARRA DE NAVEGACION-->
-    
-    
-
 
     <!--CABECERA CARROUSEL-->
-    <header class="bg-dark py-5">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center justify-content-center">
-                <div class="col-lg-8 col-xl-7 col-xxl-6">
-                    <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">A Bootstrap 5 template for modern businesses
-                        </h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive
-                            mobile-first
-                            sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
-                        src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+    <header class="bg-dark p-0">
+        <div id="carouselHeader" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="0" class="active"
+                    aria-current="true"></button>
+                <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="2"></button>
             </div>
+
+            <!-- Slides de texto -->
+            <div class="carousel-inner" style="height: 300px;">
+                <div class="carousel-item active d-flex justify-content-center align-items-center bg-dark fade-in"
+                    style="height: 100%;">
+                    <h1 class="display-4 fw-bold text-white text-center m-0">Bienvenido</h1>
+                </div>
+                <div class="carousel-item d-flex justify-content-center align-items-center bg-dark"
+                    style="height: 100%;">
+                    <h1 class="display-4 fw-bold text-white text-center m-0">Servifacil, tu mejor opción</h1>
+                </div>
+                <div class="carousel-item d-flex justify-content-center align-items-center bg-dark"
+                    style="height: 100%;">
+                    <h1 class="display-4 fw-bold text-white text-center m-0">Tenemos Lo Que Necesitas</h1>
+                </div>
+            </div>
+
+
+            <!-- Controles opcionales -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </header>
     <!--FIN CARROUSEL-->
 
-    
-    <!--TESTIMONIOS-->
-    <div class="py-5 bg-light">
-        <div class="container px-5 my-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-10 col-xl-7">
-                    <div class="text-center">
-                        <div class="fs-4 mb-4 fst-italic">"Somos SERVIFACIL
-                            Servicios a tu alcance"</div>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d"
-                                alt="..." />
-                            <div class="fw-bold">
-                                Tom Ato
-                                <span class="fw-bold text-primary mx-1">/</span>
-                                CEO, Pomodoro
+
+    <!--SECCION DEL MAPA-->
+    <section class="py-5 bg-light">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-stretch">
+                <div class="col-xl-8 d-flex flex-column">
+                    <h2 class="fw-bolder fs-5 mb-4">UBICACIÓN</h2>
+                    <div class="mb-5 flex-grow-1">
+                        <div class="ratio ratio-16x9 h-100">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7901912559228!2d-86.310259!3d12.126503099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f71543ada5f483b%3A0x63395ce0eeca545c!2sUniversidad%20de%20Managua%20U%20de%20M!5e0!3m2!1ses-419!2sni!4v1752771374549!5m2!1ses-419!2sni"
+                                style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex h-100 align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <div class="h6 fw-bolder">Contactos</div>
+                                    <p class="text-muted mb-4">
+                                        Para más información escríbenos a nuestro correo
+                                        <br />
+                                        <a href="#!">ServiFacil@gmail.com</a>
+                                    </p>
+                                    <div class="h6 fw-bolder">Míranos y búscanos en</div>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--FIN DE TESTIMONIOS-->
+    </section>
+    <!--FIN SECCION DEL MAPA-->
+
 
 
     <!--FOOTER-->
@@ -115,7 +156,7 @@
 
                     <!-- LOGO y SLOGAN -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
-                        <img src="assets/img/LogoServifacil.png" alt="Logo ServiFacil"
+                        <img src="../assets/img/LogoServifacil.png" alt="Logo ServiFacil"
                             style="width: 100px; height: auto;">
                         <p class="mt-3">¡Tu solución rápida y confiable para el hogar!</p>
                     </div>
@@ -127,17 +168,17 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">SERVICIOS</h6>
-                        <p>
-                            <a class="text-white">MDBootstrap</a>
+                        <p class="text-white">
+                            Albanileria
                         </p>
-                        <p>
-                            <a class="text-white">MDWordPress</a>
+                        <p class="text-white">
+                            Fontaneria
                         </p>
-                        <p>
-                            <a class="text-white">BrandFlow</a>
+                        <p class="text-white">
+                            <a>Electricidad</a>
                         </p>
-                        <p>
-                            <a class="text-white">Bootstrap Angular</a>
+                        <p class="text-white">
+                            Reparacion y Mantenimiento en el Hogar
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -150,10 +191,10 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">CONTACTOS</h6>
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-home mr-3"></i> Universidad De Managua UDeM</p>
+                        <p><i class="fas fa-envelope mr-3"></i> ServiFacil@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> 2256-7856</p>
+                        <p><i class="fas fa-print mr-3"></i> 2230</p>
                     </div>
                     <!-- Grid column -->
 
@@ -187,13 +228,10 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!--FIN FOOTER-->
-
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-
 </html>
