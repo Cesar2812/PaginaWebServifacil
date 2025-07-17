@@ -10824,3 +10824,90 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Imagen de fondo al inicio/
+/*Imagen de fondo*/
+.hero-header {
+  height: 60vh;
+  overflow: hidden;
+}
+
+.fade-in-bg {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.fade-in-text {
+  animation: fadeInUp 2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+
+.navbar .nav-link {
+  font-size: 1.05rem !important;
+  color: rgba(0, 15, 26, 0.8) !important;
+}
+
+.navbar .bi {
+  font-size: 1rem !important;
+} 
+
+
+/*********NAV/
+/* Azul oscuro personalizado */
+.text-custom-blue {
+  color: rgba(0, 15, 26, 0.8) !important;
+}
+
+/* Iconos más pequeños */
+.navbar .bi {
+  font-size: 2rem !important;
+}
+
+/* Centrado y ajuste de navbar */
+.navbar-nav {
+  gap: 1rem;
+}
+
+
+
