@@ -11052,3 +11052,34 @@ textarea.form-control-lg {
 .nav-custom:hover i {
   transform: scale(1.15);
 }
+
+
+
+
+
+
+
+
+
+ /* CONFIGURACION DE LOS CARD DE SERVICIOS*/
+.badge-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.badge-link.bg-success:hover {
+  background-color: #218838;
+  /* Un verde más oscuro */
+}
+
+.badge-link.bg-primary:hover {
+  background-color: #0056b3 !important;
+  /* Un azul más oscuro */
+}
+
+.badge-link:active,
+.badge-link:focus,
+.badge-link:visited {
+  color: white !important;
+  text-decoration: none !important;
+}
