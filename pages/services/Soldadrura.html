@@ -15,6 +15,12 @@
     <link rel="icon" type="image/x-icon" href="../../assets/LogoServifacil.ico" />
     <link href="../../css/styles.css" rel="stylesheet" />
 
+
+    <!-- jQuery (necesario para usar $('#formModal').modal("show")) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
     <style>
         .seccion-electricistas {
             margin: 25px;
@@ -58,14 +64,42 @@
                 margin-left: 0;
             }
         }
+
+
+
+        /* Aumentar el ancho del modal */
+        .modal-dialog {
+            max-width: 700px;
+
+
+            /* Tamaño personalizado más grande que el por defecto */
+        }
+
+        /* Agrandar inputs (excepto el textarea de descripción del problema) */
+        .modal-body input.form-control {
+            font-size: 1rem;
+            padding: 12px;
+        }
+
+        /* Reducir tamaño del textarea de descripción */
+        #txtDescripcion[name="descripcion"] {
+            font-size: 0.9rem;
+            padding: 8px;
+            height: 80px !important;
+        }
+
+        #txtProblema {
+            font-size: 0.9rem;
+            padding: 8px;
+            height: 80px !important;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- BARRA DE NAVEGACION -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow-sm"
-        style="font-family: 'Poppins', sans-serif;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow-sm" style="font-family: 'Poppins', sans-serif;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="../../assets/img/LogoServifacil.png" alt="Servifacil Logo"
@@ -125,7 +159,7 @@
                                 </div>
                             </div>
 
-                            <a href="../pages/services/Electricidad.html"
+                            <a onclick="abrirModal()"
                                 class="badge bg-success bg-gradient rounded-pill badge-link text-decoration-none">
                                 Contratar
                             </a>
@@ -162,7 +196,7 @@
                                 </div>
                             </div>
 
-                            <a href="../pages/services/Electricidad.html"
+                            <a onclick="abrirModal()"
                                 class="badge bg-success bg-gradient rounded-pill badge-link text-decoration-none">
                                 Contratar
                             </a>
@@ -198,7 +232,7 @@
                                 </div>
                             </div>
 
-                            <a href="../pages/services/Electricidad.html"
+                            <a onclick="abrirModal()"
                                 class="badge bg-success bg-gradient rounded-pill badge-link text-decoration-none">
                                 Contratar
                             </a>
@@ -218,6 +252,105 @@
             </div>
         </div>
     </section>
+
+    <!--FORMULARIO MODAL-->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--PARTE DE ARRIBA DEL FORMULARIO-->
+                <div class="modal-header bg-light text-black">
+                    <h5 class="modal-title" id="exampleModalLabel">INGRESE SUS DATOS PARA CONTRATAR</h5>
+                    <button type="button" class="btn-close" style="background-color: white; border: none; color: black;"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body g-1">
+                    <input id="txtId" type="hidden" value="0" />
+                    <!--CAMPOS DEL FORULARIO-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="txtDescripcion" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="txtDescripcion" autocomplete="off">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtDescripcion" class="form-label">Correo</label>
+                            <input type="text" class="form-control" id="txtDescripcion" autocomplete="off">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtDescripcion" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="txtDescripcion" autocomplete="off">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtDescripcion" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" id="txtDescripcion" autocomplete="off">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtFecha" class="form-label">Fecha Del Servicio</label>
+                            <input type="text" class="form-control" id="txtFecha" autocomplete="off">
+                        </div>
+
+                        <!-- HORA -->
+                        <div class="col-sm-6 position-relative">
+                            <label class="form-label">Hora</label>
+                            <input type="text" class="form-control" id="inputHora" autocomplete="off" readonly
+                                onfocus="mostrarSelectorHora()" onclick="mostrarSelectorHora()">
+
+                            <!-- Contenedor del selector de hora -->
+                            <div id="selectorHora" class="border rounded p-2 bg-light position-absolute"
+                                style="display:none; z-index: 999; width: 100%; top: 60px;">
+                                <div>
+                                    <label>Hora: <span id="hora-val">12</span></label>
+                                    <input type="range" min="0" max="23" value="12" id="rangeHora" class="form-range">
+                                </div>
+                                <div>
+                                    <label>Minuto: <span id="minuto-val">30</span></label>
+                                    <input type="range" min="0" max="59" value="30" id="rangeMinuto" class="form-range">
+                                </div>
+                                <div class="text-end mt-2">
+                                    <button type="button" class="btn btn-sm btn-success"
+                                        onclick="guardarHora()">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion Del Problema o Servicio a Requerir</label>
+                            <textarea type="text" class="form-control" id="txtProblema" style="height:125px;resize:none"
+                                name="descripcion"></textarea>
+                        </div>
+
+
+
+                    </div>
+
+                    <!--ALERT-->
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div id="mensajeError" class="alert alert-danger" role="alert">
+                                A simple danger alert—check it out!
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--BOTONES DE ABAJO-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" onclick="Guardar()">Finalizar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="text-center text-lg-start text-white mt-2 bg-dark">
@@ -265,6 +398,7 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/scripts.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
 </body>
 
