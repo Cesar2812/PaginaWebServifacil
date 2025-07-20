@@ -1,15 +1,19 @@
 ///ABRIR MODAL PARA VIDEO EN LA VISTA DE SERVICIOS
 ///SERVICIO DE ELECTRICIDAD
-window.abrirModal=function(){
+window.abrirModal = function () {
   $("#formModal").modal("show");
-    $("#mensajeError").hide();
+  $("#mensajeError").hide();
 
-    //cargando la fecha de hoy
-    $("#txtFecha")
-      .datepicker({ dateFormat: "dd/mm/yy" })
-      .datepicker("setDate", new Date());
+  //cargando la fecha de hoy
+  $("#txtFecha")
+    .datepicker({ dateFormat: "dd/mm/yy" })
+    .datepicker("setDate", new Date());
+};
 
-}
+
+
+
+
 
 
 function mostrarSelectorHora() {
