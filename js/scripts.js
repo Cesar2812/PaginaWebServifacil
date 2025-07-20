@@ -1,6 +1,6 @@
 ///ABRIR MODAL PARA VIDEO EN LA VISTA DE SERVICIOS
 ///SERVICIO DE ELECTRICIDAD
-function abrirModal() {
+window.abrirModal=function(){
   $("#formModal").modal("show");
     $("#mensajeError").hide();
 
